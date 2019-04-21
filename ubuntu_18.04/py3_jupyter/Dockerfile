@@ -1,0 +1,7 @@
+FROM	gboysking/dev:U18.04_py3
+
+RUN pip install jupyter && pip install matplotlib
+
+RUN jupyter notebook --generate-config --allow-root && echo "c.NotebookApp.password = u'sha1:6a3f528eec40:6e896b6e4828f525a6e20e5411cd1c8075d68619'" >> /root/.jupyter/jupyter_notebook_config.py
+EXPOSE 8888
+ENTRYPOINT jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --no-browser
