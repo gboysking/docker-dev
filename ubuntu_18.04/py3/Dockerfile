@@ -1,4 +1,4 @@
-FROM	gboysking/dev:U18.04_py3
+FROM	gboysking/dev:U18.04_base
 RUN apt-get install -y python3 python3-pip openjdk-8-jre wget
 RUN ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip && pip install --upgrade pip
 WORKDIR /home/root/
